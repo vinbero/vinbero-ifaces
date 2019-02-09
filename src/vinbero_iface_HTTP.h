@@ -1,11 +1,11 @@
 #ifndef _VINBERO_IFACE_HTTP_H
 #define _VINBERO_IFACE_HTTP_H
 
-#include <vinbero_common/vinbero_common_Module.h>
-#include <vinbero_common/vinbero_common_ClModule.h>
+#include <vinbero_com/vinbero_com_Module.h>
+#include <vinbero_com/vinbero_com_ClModule.h>
 
 struct vinbero_iface_HTTP_Response {
-    struct vinbero_common_ClModule* clModule;
+    struct vinbero_com_ClModule* clModule;
     struct gaio_Io* io;
     struct vinbero_iface_HTTP_Response_Methods* methods;
 };
@@ -75,242 +75,242 @@ struct vinbero_iface_HTTP_Response_Methods {
 #define VINBERO_IFACE_HTTP_FUNCTIONS \
 int \
 vinbero_iface_HTTP_onRequestStart \
-(struct vinbero_common_ClModule* clModule); \
+(struct vinbero_com_ClModule* clModule); \
 \
 int \
 vinbero_iface_HTTP_onRequestMethod \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* token, size_t tokenSize); \
 \
 int \
 vinbero_iface_HTTP_onRequestUri \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* token, size_t tokenSize); \
 \
 int \
 vinbero_iface_HTTP_onRequestVersionMajor \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  int major); \
 \
 int \
 vinbero_iface_HTTP_onRequestVersionMinor \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  int minor); \
 \
 int \
 vinbero_iface_HTTP_onRequestContentLength \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  size_t contentLength); \
 \
 int \
 vinbero_iface_HTTP_onRequestContentType \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* token, size_t tokenSize); \
 \
 int \
 vinbero_iface_HTTP_onRequestScriptPath \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* token, size_t tokenSize); \
 \
 int \
 vinbero_iface_HTTP_onRequestKeepAlive \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  bool isKeepAlive); \
 \
 int \
 vinbero_iface_HTTP_onRequestHeaderField \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* token, size_t tokenSize); \
 \
 int \
 vinbero_iface_HTTP_onRequestHeaderValue \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* token, size_t tokenSize); \
 \
 int \
 vinbero_iface_HTTP_onRequestHeadersFinish \
-(struct vinbero_common_ClModule* clModule); \
+(struct vinbero_com_ClModule* clModule); \
 \
 int \
 vinbero_iface_HTTP_onRequestBodyStart \
-(struct vinbero_common_ClModule* clModule); \
+(struct vinbero_com_ClModule* clModule); \
 \
 int \
 vinbero_iface_HTTP_onRequestBody \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* token, size_t tokenSize); \
 \
 int \
 vinbero_iface_HTTP_onRequestBodyFinish \
-(struct vinbero_common_ClModule* clModule); \
+(struct vinbero_com_ClModule* clModule); \
 \
 int \
 vinbero_iface_HTTP_onGetRequestIntHeader \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* headerField, int* headerValue); \
 \
 int \
 vinbero_iface_HTTP_onGetRequestDoubleHeader \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* headerField, double* headerValue); \
 \
 int \
 vinbero_iface_HTTP_onGetRequestStringHeader \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
  const char* headerField, const char** headerValue); \
 \
 int \
 vinbero_iface_HTTP_onGetRequestContentLength \
-(struct vinbero_common_ClModule* clModule, \
+(struct vinbero_com_ClModule* clModule, \
 size_t* contentLength); \
 \
 int \
 vinbero_iface_HTTP_onRequestFinish \
-(struct vinbero_common_ClModule* clModule)
+(struct vinbero_com_ClModule* clModule)
 
 #define VINBERO_IFACE_HTTP_FUNCTION_POINTERS \
 int \
 (*vinbero_iface_HTTP_onRequestStart) \
-(struct vinbero_common_ClModule*); \
+(struct vinbero_com_ClModule*); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestMethod) \
-(struct vinbero_common_ClModule*, const char*, size_t); \
+(struct vinbero_com_ClModule*, const char*, size_t); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestUri) \
-(struct vinbero_common_ClModule*, const char*, size_t); \
+(struct vinbero_com_ClModule*, const char*, size_t); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestVersionMajor) \
-(struct vinbero_common_ClModule*, int); \
+(struct vinbero_com_ClModule*, int); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestVersionMinor) \
-(struct vinbero_common_ClModule*, int); \
+(struct vinbero_com_ClModule*, int); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestHeaderField) \
-(struct vinbero_common_ClModule*, const char*, size_t); \
+(struct vinbero_com_ClModule*, const char*, size_t); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestHeaderValue) \
-(struct vinbero_common_ClModule*, const char*, size_t); \
+(struct vinbero_com_ClModule*, const char*, size_t); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestContentLength) \
-(struct vinbero_common_ClModule*, size_t); \
+(struct vinbero_com_ClModule*, size_t); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestContentType) \
-(struct vinbero_common_ClModule*, const char*, size_t); \
+(struct vinbero_com_ClModule*, const char*, size_t); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestScriptPath) \
-(struct vinbero_common_ClModule*, const char*, size_t); \
+(struct vinbero_com_ClModule*, const char*, size_t); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestKeepAlive) \
-(struct vinbero_common_ClModule*, bool); \
+(struct vinbero_com_ClModule*, bool); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestHeadersFinish) \
-(struct vinbero_common_ClModule*); \
+(struct vinbero_com_ClModule*); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestBodyStart) \
-(struct vinbero_common_ClModule*); \
+(struct vinbero_com_ClModule*); \
 int \
 (*vinbero_iface_HTTP_onRequestBody) \
-(struct vinbero_common_ClModule*, const char*, size_t); \
+(struct vinbero_com_ClModule*, const char*, size_t); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestBodyFinish) \
-(struct vinbero_common_ClModule*); \
+(struct vinbero_com_ClModule*); \
 \
 int \
 (*vinbero_iface_HTTP_onGetRequestIntHeader) \
-(struct vinbero_common_ClModule*, const char*, int*); \
+(struct vinbero_com_ClModule*, const char*, int*); \
 \
 int \
 (*vinbero_iface_HTTP_onGetRequestDoubleHeader) \
-(struct vinbero_common_ClModule*, const char*, double*); \
+(struct vinbero_com_ClModule*, const char*, double*); \
 \
 int \
 (*vinbero_iface_HTTP_onGetRequestStringHeader) \
-(struct vinbero_common_ClModule*, const char*, const char**); \
+(struct vinbero_com_ClModule*, const char*, const char**); \
 \
 int \
 (*vinbero_iface_HTTP_onGetRequestContentLength) \
-(struct vinbero_common_ClModule*, size_t*); \
+(struct vinbero_com_ClModule*, size_t*); \
 \
 int \
 (*vinbero_iface_HTTP_onRequestFinish) \
-(struct vinbero_common_ClModule*)
+(struct vinbero_com_ClModule*)
 
 struct vinbero_iface_HTTP {
     VINBERO_IFACE_HTTP_FUNCTION_POINTERS;
 };
 
 #define VINBERO_IFACE_HTTP_DLSYM(iface, dlHandle, ret) do { \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestStart, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestMethod, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestUri, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestVersionMajor, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestVersionMinor, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestContentLength, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestContentType, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestScriptPath, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestKeepAlive, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestHeaderField, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestHeaderValue, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestHeadersFinish, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestBodyStart, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestBody, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestBodyFinish, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onGetRequestIntHeader, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onGetRequestDoubleHeader, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onGetRequestStringHeader, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onGetRequestContentLength, ret); \
     if(*ret < 0) break; \
-    VINBERO_COMMON_MODULE_DLSYM \
+    VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestFinish, ret); \
     if(*ret < 0) break; \
 } while(0)
