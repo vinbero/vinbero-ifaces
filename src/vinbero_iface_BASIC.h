@@ -1,21 +1,21 @@
-#ifndef _VINBERO_INTERFACE_BASIC_H
-#define _VINBERO_INTERFACE_BASIC_H
+#ifndef _VINBERO_IFACE_BASIC_H
+#define _VINBERO_IFACE_BASIC_H
 
 #include <vinbero_common/vinbero_common_Module.h>
 
-#define VINBERO_INTERFACE_BASIC_FUNCTIONS \
-int vinbero_interface_BASIC_service(struct vinbero_common_Module* module)
+#define VINBERO_IFACE_BASIC_FUNCTIONS \
+int vinbero_iface_BASIC_service(struct vinbero_common_Module* module)
 
-#define VINBERO_INTERFACE_BASIC_FUNCTION_POINTERS \
-int (*vinbero_interface_BASIC_service)(struct vinbero_common_Module*)
+#define VINBERO_IFACE_BASIC_FUNCTION_POINTERS \
+int (*vinbero_iface_BASIC_service)(struct vinbero_common_Module*)
 
-struct vinbero_interface_BASIC {
-    VINBERO_INTERFACE_BASIC_FUNCTION_POINTERS;
+struct vinbero_iface_BASIC {
+    VINBERO_IFACE_BASIC_FUNCTION_POINTERS;
 };
 
-#define VINBERO_INTERFACE_BASIC_DLSYM(interface, dlHandle, ret) \
+#define VINBERO_IFACE_BASIC_DLSYM(iface, dlHandle, ret) \
 do { \
-    VINBERO_COMMON_MODULE_DLSYM(interface, dlHandle, vinbero_interface_BASIC_service, ret); \
+    VINBERO_COMMON_MODULE_DLSYM(iface, dlHandle, vinbero_iface_BASIC_service, ret); \
     if(*ret < 0) break; \
 } while(0)
 
