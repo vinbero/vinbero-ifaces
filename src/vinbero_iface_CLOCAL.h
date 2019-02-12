@@ -3,20 +3,20 @@
 
 #include <vinbero_com/vinbero_com_ClModule.h>
 
-#define VINBERO_IFACE_CLOCAL_FUNCTIONS \
+#define VINBERO_IFACE_CLOCAL_FUNCS \
 int vinbero_iface_CLOCAL_init(struct vinbero_com_ClModule* clModule); \
 int vinbero_iface_CLOCAL_rInit(struct vinbero_com_ClModule* clModule); \
 int vinbero_iface_CLOCAL_destroy(struct vinbero_com_ClModule* clModule); \
 int vinbero_iface_CLOCAL_rDestroy(struct vinbero_com_ClModule* clModule)
 
-#define VINBERO_IFACE_CLOCAL_FUNCTION_POINTERS \
+#define VINBERO_IFACE_CLOCAL_FUNC_PTRS \
 int (*vinbero_iface_CLOCAL_init)(struct vinbero_com_ClModule*); \
 int (*vinbero_iface_CLOCAL_rInit)(struct vinbero_com_ClModule*); \
 int (*vinbero_iface_CLOCAL_destroy)(struct vinbero_com_ClModule*); \
 int (*vinbero_iface_CLOCAL_rDestroy)(struct vinbero_com_ClModule*)
 
 struct vinbero_iface_CLOCAL {
-    VINBERO_IFACE_CLOCAL_FUNCTION_POINTERS;
+    VINBERO_IFACE_CLOCAL_FUNC_PTRS;
 };
 
 #define VINBERO_IFACE_CLOCAL_DLSYM(iface, dlHandle, ret) do { \

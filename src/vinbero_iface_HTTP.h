@@ -72,7 +72,7 @@ struct vinbero_iface_HTTP_Response_Methods {
     (struct vinbero_iface_HTTP_Response* response);
 };
 
-#define VINBERO_IFACE_HTTP_FUNCTIONS \
+#define VINBERO_IFACE_HTTP_FUNCS \
 int \
 vinbero_iface_HTTP_onRequestStart \
 (struct vinbero_com_ClModule* clModule); \
@@ -168,7 +168,7 @@ int \
 vinbero_iface_HTTP_onRequestFinish \
 (struct vinbero_com_ClModule* clModule)
 
-#define VINBERO_IFACE_HTTP_FUNCTION_POINTERS \
+#define VINBERO_IFACE_HTTP_FUNC_PTRS \
 int \
 (*vinbero_iface_HTTP_onRequestStart) \
 (struct vinbero_com_ClModule*); \
@@ -249,7 +249,7 @@ int \
 (struct vinbero_com_ClModule*)
 
 struct vinbero_iface_HTTP {
-    VINBERO_IFACE_HTTP_FUNCTION_POINTERS;
+    VINBERO_IFACE_HTTP_FUNC_PTRS;
 };
 
 #define VINBERO_IFACE_HTTP_DLSYM(iface, dlHandle, ret) do { \
