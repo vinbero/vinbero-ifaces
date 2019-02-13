@@ -7,11 +7,11 @@
 #define VINBERO_IFACE_TLSERVICE_FUNCS \
 int vinbero_iface_TLSERVICE_call(struct vinbero_com_TlModule* tlModule)
 
-#define VINBERO_IFACE_TLSERVICE_FUNC_PTRS \
+#define VINBERO_IFACE_TLSERVICE_FUNC_POINTERS \
 int (*vinbero_iface_TLSERVICE_call)(struct vinbero_com_TlModule*)
 
 struct vinbero_iface_TLSERVICE {
-    VINBERO_IFACE_TLSERVICE_FUNC_PTRS;
+    VINBERO_IFACE_TLSERVICE_FUNC_POINTERS;
 };
 
 #define VINBERO_IFACE_TLSERVICE_DLSYM(iface, dlHandle, ret) \

@@ -6,11 +6,11 @@
 #define VINBERO_IFACE_BASIC_FUNCS \
 int vinbero_iface_BASIC_service(struct vinbero_com_Module* module)
 
-#define VINBERO_IFACE_BASIC_FUNC_PTRS \
+#define VINBERO_IFACE_BASIC_FUNC_POINTERS \
 int (*vinbero_iface_BASIC_service)(struct vinbero_com_Module*)
 
 struct vinbero_iface_BASIC {
-    VINBERO_IFACE_BASIC_FUNC_PTRS;
+    VINBERO_IFACE_BASIC_FUNC_POINTERS;
 };
 
 #define VINBERO_IFACE_BASIC_DLSYM(iface, dlHandle, ret) \

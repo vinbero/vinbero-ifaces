@@ -178,7 +178,7 @@ int \
 vinbero_iface_HTTP_onRequestFinish \
 (struct vinbero_com_ClModule* clModule)
 
-#define VINBERO_IFACE_HTTP_FUNC_PTRS \
+#define VINBERO_IFACE_HTTP_FUNC_POINTERS \
 int \
 (*vinbero_iface_HTTP_onRequestStart) \
 (struct vinbero_com_ClModule*); \
@@ -267,7 +267,7 @@ int \
 (struct vinbero_com_ClModule*)
 
 struct vinbero_iface_HTTP {
-    VINBERO_IFACE_HTTP_FUNC_PTRS;
+    VINBERO_IFACE_HTTP_FUNC_POINTERS;
 };
 
 #define VINBERO_IFACE_HTTP_DLSYM(iface, dlHandle, ret) do { \
