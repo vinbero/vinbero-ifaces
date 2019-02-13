@@ -3,20 +3,20 @@
 
 #include <vinbero_com/vinbero_com_TlModule.h>
 
-#define VINBERO_IFACE_TLOCAL_FUNCTIONS \
+#define VINBERO_IFACE_TLOCAL_FUNCS \
 int vinbero_iface_TLOCAL_init(struct vinbero_com_TlModule* tlModule); \
 int vinbero_iface_TLOCAL_rInit(struct vinbero_com_TlModule* tlModule); \
 int vinbero_iface_TLOCAL_destroy(struct vinbero_com_TlModule* tlModule); \
 int vinbero_iface_TLOCAL_rDestroy(struct vinbero_com_TlModule* tlModule)
 
-#define VINBERO_IFACE_TLOCAL_FUNCTION_POINTERS \
+#define VINBERO_IFACE_TLOCAL_FUNC_POINTERS \
 int (*vinbero_iface_TLOCAL_init)(struct vinbero_com_TlModule*); \
 int (*vinbero_iface_TLOCAL_rInit)(struct vinbero_com_TlModule*); \
 int (*vinbero_iface_TLOCAL_destroy)(struct vinbero_com_TlModule*); \
 int (*vinbero_iface_TLOCAL_rDestroy)(struct vinbero_com_TlModule*)
 
 struct vinbero_iface_TLOCAL {
-    VINBERO_IFACE_TLOCAL_FUNCTION_POINTERS;
+    VINBERO_IFACE_TLOCAL_FUNC_POINTERS;
 };
 
 #define VINBERO_IFACE_TLOCAL_DLSYM(iface, dlHandle, ret) \

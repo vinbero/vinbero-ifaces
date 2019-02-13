@@ -4,14 +4,14 @@
 #include <vinbero_com/vinbero_com_TlModule.h>
 #include <vinbero_com/vinbero_com_Status.h>
 
-#define VINBERO_IFACE_TLSERVICE_FUNCTIONS \
+#define VINBERO_IFACE_TLSERVICE_FUNCS \
 int vinbero_iface_TLSERVICE_call(struct vinbero_com_TlModule* tlModule)
 
-#define VINBERO_IFACE_TLSERVICE_FUNCTION_POINTERS \
+#define VINBERO_IFACE_TLSERVICE_FUNC_POINTERS \
 int (*vinbero_iface_TLSERVICE_call)(struct vinbero_com_TlModule*)
 
 struct vinbero_iface_TLSERVICE {
-    VINBERO_IFACE_TLSERVICE_FUNCTION_POINTERS;
+    VINBERO_IFACE_TLSERVICE_FUNC_POINTERS;
 };
 
 #define VINBERO_IFACE_TLSERVICE_DLSYM(iface, dlHandle, ret) \
