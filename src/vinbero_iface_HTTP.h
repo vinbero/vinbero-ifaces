@@ -113,6 +113,16 @@ vinbero_iface_HTTP_onRequestScriptPath \
  const char* token, size_t tokenSize); \
 \
 int \
+vinbero_iface_HTTP_onRequestPathInfo \
+(struct vinbero_com_ClModule* clModule, \
+ const char* token, size_t tokenSize); \
+\
+int \
+vinbero_iface_HTTP_onRequestQueryString \
+(struct vinbero_com_ClModule* clModule, \
+ const char* token, size_t tokenSize); \
+\
+int \
 vinbero_iface_HTTP_onRequestKeepAlive \
 (struct vinbero_com_ClModule* clModule, \
  bool isKeepAlive); \
@@ -210,6 +220,14 @@ int \
 (struct vinbero_com_ClModule*, const char*, size_t); \
 \
 int \
+(*vinbero_iface_HTTP_onRequestPathInfo) \
+(struct vinbero_com_ClModule*, const char*, size_t); \
+\
+int \
+(*vinbero_iface_HTTP_onRequestQueryString) \
+(struct vinbero_com_ClModule*, const char*, size_t); \
+\
+int \
 (*vinbero_iface_HTTP_onRequestKeepAlive) \
 (struct vinbero_com_ClModule*, bool); \
 \
@@ -276,6 +294,12 @@ struct vinbero_iface_HTTP {
     if(*ret < 0) break; \
     VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestScriptPath, ret); \
+    if(*ret < 0) break; \
+    VINBERO_COM_MODULE_DLSYM \
+    (iface, dlHandle, vinbero_iface_HTTP_onRequestPathInfo, ret); \
+    if(*ret < 0) break; \
+    VINBERO_COM_MODULE_DLSYM \
+    (iface, dlHandle, vinbero_iface_HTTP_onRequestQueryString, ret); \
     if(*ret < 0) break; \
     VINBERO_COM_MODULE_DLSYM \
     (iface, dlHandle, vinbero_iface_HTTP_onRequestKeepAlive, ret); \
